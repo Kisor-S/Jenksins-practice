@@ -11,9 +11,9 @@ pipeline {
       }
       steps {
         checkout scm
-        sh 'mvn clean compile'
-        sh 'mvn test'
-        sh 'mvn package'
+        sh 'mvn -f multi-stage-multi-agent/pom.xml clean compile'
+        sh 'mvn -f multi-stage-multi-agent/pom.xml test'
+        sh 'mvn -f multi-stage-multi-agent/pom.xml package'
       }
     }
 
